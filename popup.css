@@ -1,6 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+}
+
 h1 {
     text-align: center;
-
 }
 
 /* -------------- SIDEBAR -------------- */
@@ -58,13 +73,12 @@ h1 {
     border-style: solid;
     border-color: #7C5CFC;
     border-width: 1px;
+    box-shadow: 0 0 10px #7C5CFC;
 
 }
 
 
-.side-nav__item>svg {
-    flex-shrink: 0;
-}
+
 
 .side-nav__item.last-item {
     margin-bottom: 32px;
@@ -78,6 +92,7 @@ h1 {
 .side-nav__item-active {
     background-color: #7C5CFC;
     color: white;
+
 }
 
 a:link {
@@ -97,4 +112,24 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+
+
+.footer-copyright {
+    background-color: #52527a;
+    color: #ffffff;
+    padding: 15px;
+    margin-top: 30px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin-bottom: 0px;
+}
+
+.footer-copyright p a {
+    color: #ffffff;
+    text-decoration: underline;
 }
