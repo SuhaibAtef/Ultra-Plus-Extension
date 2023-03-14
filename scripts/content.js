@@ -214,7 +214,7 @@ function addLinks() {
                     var btn2 = document.createElement("a");
                     btn2.innerHTML = "البوست الشامل";
                     btn2.classList.add("btn", "btn-danger", "btn-sm", "rounded-0");
-                    btn2.href = coursesResources[title];
+                    btn2.href = coursesPosts[title];
                     btn2.style.width = "100%";
                     btn2.target = "_blank";
                     var diva = document.createElement("div");
