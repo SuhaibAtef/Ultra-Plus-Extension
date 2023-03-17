@@ -6,7 +6,6 @@ team.innerText = Data['Team-Name']
 team.setAttribute("href", Data['Team-Link'])
 
 
-
 const images = document.getElementsByClassName("image");
 const textItems = document.querySelectorAll("span");
 const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
@@ -29,7 +28,16 @@ const imagesSourceDark = {
     "4": "./images/tabIcons/Registration-light.png",
     "5": "./images/tabIcons/OfficeEmail-light.png",
 }
-var darkmode = true;
+
+
+var darkmode;
+var response = await chrome.storage.sync.get().then((item) => {
+    darkmode = item['darkmode'];
+    console.log(darkmode);
+
+});
+
+
 var theme = "light";
 document.body.style = "transition: 0.5s;"
 
@@ -57,6 +65,7 @@ function setTheme() {
 
 
 function setLight() {
+    chrome.storage.sync.set({ darkmode: false })
     darkmode = false;
     for (var i = 1; i < 6; i++) {
         images[i].src = imagesSourceLight[i]
@@ -72,7 +81,9 @@ function setLight() {
 
 
 function setDark() {
+    chrome.storage.sync.set({ darkmode: true })
     darkmode = true;
+
     for (var i = 1; i < 6; i++) {
         images[i].src = imagesSourceDark[i]
     }
@@ -86,7 +97,7 @@ function setDark() {
     themeIcon.src = moon;
 }
 
-if (darkmode == true) {
+if (darkmode) {
     theme = "light";
-    setTheme()
+    setTheme();
 }
