@@ -49,7 +49,7 @@ function addLinks() {
                 // console.log(list[i].id);
                 var item = listItems[i];
                 // aalink coursename mr-2 mb-1  / #course-info-container-190-3 > div > div > a 
-                title = item.querySelector("a.aalink span.multiline").textContent.replace(/\s/g, '').slice(0, 6);
+                title = item.querySelector("a.aalink span.multiline").textContent.replace(/\s/g, '').split('-')[0];
                 if (coursesResources.hasOwnProperty(title)) {
                     // console.log(dict[title]); // aquire link for the element.
                     var btn = document.createElement("a");

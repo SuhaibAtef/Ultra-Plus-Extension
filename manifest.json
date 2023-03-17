@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Ultra+- CPE",
-  "version": "0.3",
+  "name": "Ultra+ CPE",
+  "version": "0.4",
   "description": "An Assistant for any student in computer engineering at JUST.",
   "icons": {
     "16": "images/icon-16.png",
