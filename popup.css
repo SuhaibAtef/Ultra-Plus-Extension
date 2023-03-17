@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
 
+:root {
+    --main-bg-color: #7C5CFC;
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -42,23 +48,23 @@ h1 {
     cursor: pointer;
     white-space: nowrap;
     border-style: solid;
-    border-color: #7C5CFC;
+    border-color: var(--main-bg-color);
     border-width: 1px;
-    box-shadow: 0 0 10px #7C5CFC;
+    box-shadow: 0 0 10px var(--main-bg-color);
     margin-bottom: 20px;
 
 }
 
 
 .side-nav__item:hover {
-    background-color: #7C5CFC;
+    background-color: var(--main-bg-color);
     color: white;
 
 }
 
 
 .footer-copyright {
-    background-color: #52527a;
+    background-color: var(--main-bg-color);
     color: #ffffff;
     padding: 15px;
 
@@ -156,4 +162,28 @@ span.dark {
     animation-name: change;
     animation-duration: 1s;
     animation-direction: alternate;
+}
+
+#colorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border-radius: 5px;
+    border: none;
+}
+
+#colorPicker::-moz-color-swatch {
+    border-radius: 5px;
+    border: none;
 }

@@ -3,6 +3,7 @@ const Data = {
     "Title": "ULTRA+",
     "Team-Name": "Ultra Bytes",
     "Team-Link": "https://www.facebook.com/UltrabotCPE",
+    "mainColor": "#7C5CFC",
 
 }
 

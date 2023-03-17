@@ -4,6 +4,17 @@ title.innerText = Data['Title']
 const team = document.getElementById("teamName");
 team.innerText = Data['Team-Name']
 team.setAttribute("href", Data['Team-Link'])
+var r = document.querySelector(':root');
+var colorPicker = document.getElementById("colorPicker");
+colorPicker.setAttribute("value", Data["mainColor"]);
+r.style.setProperty('--main-bg-color', Data["mainColor"]);
+
+colorPicker.addEventListener("change", editColor, false);
+
+function editColor(event) {
+    r.style.setProperty('--main-bg-color', event.target.value);
+    ;
+}
 
 
 const images = document.getElementsByClassName("image");
@@ -100,4 +111,29 @@ function setDark() {
 if (darkmode) {
     theme = "light";
     setTheme();
+}
+
+
+
+function createClass(name, rules) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    if (!(style.sheet || {}).insertRule)
+        (style.styleSheet || style.sheet).addRule(name, rules);
+    else
+        style.sheet.insertRule(name + "{" + rules + "}", 0);
+}
+createClass('.whatever', "background-color: green;");
+
+function applyClass(name, element, doRemove) {
+    if (typeof element.valueOf() == "string") {
+        element = document.getElementById(element);
+    }
+    if (!element) return;
+    if (doRemove) {
+        element.className = element.className.replace(new RegExp("\\b" + name + "\\b", "g"));
+    } else {
+        element.className = element.className + " " + name;
+    }
 }
