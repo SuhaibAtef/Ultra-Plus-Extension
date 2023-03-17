@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Ultra - CPE",
-  "version": "1.0",
+  "name": "Ultra+- CPE",
+  "version": "0.3",
   "description": "An Assistant for any student in computer engineering at JUST.",
   "icons": {
     "16": "images/icon-16.png",
@@ -16,7 +16,8 @@
     {
       "run_at": "document_end",
       "js": [
-        "scripts/content.js"
+        "scripts/content.js",
+        "Editthis.js"
       ],
       "matches": [
         "https://learn.ejust.org/*/my/courses.php"
