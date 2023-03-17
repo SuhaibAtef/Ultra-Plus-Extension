@@ -38,7 +38,7 @@ h1 {
 
 .side-nav__item {
     list-style: none;
-    color: #596780;
+    color: var(--main-bg-color);
     display: flex;
     align-items: center;
     gap: 14px;

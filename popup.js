@@ -9,11 +9,16 @@ var colorPicker = document.getElementById("colorPicker");
 colorPicker.setAttribute("value", Data["mainColor"]);
 r.style.setProperty('--main-bg-color', Data["mainColor"]);
 
+var color = Data["mainColor"];
 colorPicker.addEventListener("change", editColor, false);
-
+function setColor(color) {
+    r.style.setProperty('--main-bg-color', color);
+    colorPicker.setAttribute("value", color);
+}
 function editColor(event) {
-    r.style.setProperty('--main-bg-color', event.target.value);
-    ;
+    chrome.storage.sync.set({ color: event.target.value })
+    setColor(event.target.value);
+
 }
 
 
@@ -44,6 +49,8 @@ const imagesSourceDark = {
 var darkmode;
 var response = await chrome.storage.sync.get().then((item) => {
     darkmode = item['darkmode'];
+    color = item['color'];
+    setColor(color);
     console.log(darkmode);
 
 });
